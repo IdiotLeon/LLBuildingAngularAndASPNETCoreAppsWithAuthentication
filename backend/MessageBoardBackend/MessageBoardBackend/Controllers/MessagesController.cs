@@ -11,7 +11,8 @@ namespace MessageBoardBackend.Controllers
     [Route("api/Messages")]
     public class MessagesController : Controller
     {
-        public IEnumerable<Message> Get() {
+        public IEnumerable<Message> Get()
+        {
             return new Message[] {
                 new Message{
                     Owner = "Leon",
@@ -22,6 +23,12 @@ namespace MessageBoardBackend.Controllers
                     Content = "Hi",
                 },
             };
+        }
+
+        [HttpPost]
+        public void Post([FromBody] Message message)
+        {
+
         }
     }
 }
